@@ -1,0 +1,293 @@
+WK-7_Chapter-9: Testing
+9.1 Explain why you can never be completely confident that all of the faults in a software product have been revealed by program testing.
+9.5 Explain why it is easier to develop automated unit tests than automated feature tests.
+9.7 What is regression testing and why is it important? Explain why automated testing makes regression testing straightforward.
+9.9 Explain why software security testing is more difficult than functional testing.
+
+
+
+9.1 Why it would be very difficult to reveal all faults using testing
+
+9.1 Explain why you can never be completely confident that all of the faults in a software product have been revealed by program testing
+
+Software testing is the process of evaluating a software product or system to identify any issues or defects that may prevent it from functioning as intended. While testing can help identify many issues, it cannot guarantee that all faults or defects have been discovered.
+
+Here are some reasons why you can never be completely confident that all faults in a software product have been revealed by program testing:
+
+Limited testing scenarios: Testing can only cover a finite number of scenarios, and it is impossible to test every possible combination of inputs, usage patterns, and environmental conditions that users may encounter. As a result, some defects may only manifest themselves in certain conditions that were not covered during testing.
+Human error: Testing is performed by humans, who can make mistakes in the testing process. For example, a tester may overlook a critical issue, or may not have enough experience or knowledge to identify certain types of defects.
+Time and resource constraints: Testing is often done under tight deadlines and resource constraints. This may limit the amount of time and resources that can be devoted to testing, potentially leading to incomplete testing.
+Code complexity: Modern software products are highly complex, and it is often difficult to understand how all the different components interact with each other. This can make it challenging to identify and test all possible edge cases.
+Unforeseen use cases: It is impossible to predict how users will use a software product in the real world. Some issues may only be discovered after the product has been released and users start using it in ways that were not anticipated during testing.
+For these reasons, it is impossible to guarantee that all faults in a software product have been revealed by program testing. However, through careful planning, execution, and continuous improvement of the testing process, software teams can increase the likelihood of catching as many defects as possible before releasing the product.
+
+Testing is only one part of the much larger process of verifying and validating software. Bugs in software are discovered when testers run through a series of scenarios designed to elicit unanticipated results from the application under test. It is impossible for testing to disclose all possible problems except under ideal conditions. More systemic problems may be lurking beneath the surface of an unmanaged circumstance.
+
+There are too many variables to allow for exhaustive testing:
+
+• There is no way to test the software with every potential input.
+• There are too many possible permutations of inputs to the programme for us to test them all.
+• Sadly, it is not practical to test every possible combination of inputs and outputs in the software.
+• Some possible failures, such as those resulting from poor UI design or inadequate requirements analysis, are beyond the scope of our testing.
+Suppose that it is impossible to test for every potential valid input (true for all but trivial programs). Either the software is bug-free or the test cases are ineffective. If they find a flaw in the programme, it's proof that a mistake was made (Lam et al., 2020). The fact that they did not locate a mistake indicates that the code they executed was proper for the data that was given to them. There is a chance that a bug will show up in the next test of the same code sequence but with different inputs.
+
+When your testing team has exhausted all of its planned tests, you can consider your testing to be complete, or exhaustive. Quality assurance testing is a test of tests, where every imaginable situation or data collection is put to the test. In its simplest form, extensive testing entails ensuring that all possible flaws have been found and fixed. It's impossible to do exhaustive tests (using all conceivable inputs and initial conditions) even in the simplest of situations. We QA professionals always moan about how little time there is for testing. It would take an infinite amount of time to try out every possible input and output pairing.
+
+Comprehensive Testing Methods
+
+Instead of doing what we've always done, which is to try everything and hope that some of the good ideas work, we've adopted a risk-and-priority-based approach to focus our efforts where they'll have the most impact. We may be able to reduce the number of permutations by employing pairwise testing, cause-and-effect diagrams, and other logically-based procedures, hence increasing the number of times each test is run. Any testing plan should incorporate the following main and foundational procedures:
+
+Impact on Business: This is not the sole consideration, but it is a crucial one in assessing the threat to business. Assessing how much risk a failed part of a module poses to the entire is a key question for testers to ask (Tebes et al., 2020). For each module, testers should maintain communication with the module's business analyst to gain an appreciation of the severity of the risk posed by the failure of each capability.
+
+Failure probability:Failure probability is another essential indicator for determining the health of a function. It is possible for some features to have a higher rate of failure than others (Lam et al., 2020). Take an online store, for instance; it might have a sign-in option, and it might also be able to track a customer's activity to offer relevant recommendations (cross-sell/upsell) based on what they've already viewed. We can observe as testers that the second version of content is more likely to malfunction than something such as a login page because of the complicated business logic it employs.
+
+Regression:When there is a modification or addition to specific parts of the AUT, the testers should pay special attention to this parameter and determine which features need to be regressed more regularly. Accurately identifying the places in question requires doing a suitable impact analysis. In order to properly comprehend the impacted regions, the impact study must always include the development, quality assurance, and business analyst teams.
+
+Recovery:What is the timeframe for recovery if something goes wrong with a certain component? Designers can give input to QA groups on how long it should take to restore individual app features.
+
+This is why complete testing is both impractical and impossible:
+
+Extensive or complete testing does not exist. Due of the following problems, this is typically quite challenging to accomplish:
+
+• The part of the design process is so large that it would be impractical to use all of the inputs when testing the software. The input could be right or wrong.
+
+• It's possible that a large number of states will participate in the initiative. There may be timing constraints on some of the inputs. When information is legitimate yet late in coming, it is called an untimely input. When testing software fully, the responsibility is to develop of the system may be very large.
+
+• There could be problems in the design that are too difficult to test for. There could be unspoken assumptions and value judgements baked into the system (Lam et al., 2020). A programmer, for instance, might alter the behaviour of the programme by setting a variable name or a static variable.
+
+• It can be hard to model all the conditions under which a system could run. When the behaviour of the software system is affected by environmental variables, such as weather, temperature, height, pressure, etc., this becomes more crucial.
+
+
+The larger process of software verification and validation includes testing. The testers attempt to make the programme behave in an unusual way in order to spot an anomaly that can subsequently be fixed. Testing is unable to consistently show the defects other than those given. There is always a chance that a test case that is missed could hide more systemic issues.
+
+     Full testing is not possible due to a number of factors:
+
+• We are unable to test every programme input.
+
+• All possible input combinations for the programme cannot be tested.
+
+• We are unable to test every route through the programme.
+
+• All other possible failures, such as those brought on by flawed user interface design or insufficient requirement analysis, cannot be tested for.
+
+         Suppose that it is impossible to thoroughly test a programme with each and every potential valid input (true for all but trivial programs). Test cases either do not show a programme fault or show a programme fault. They prove the existence of a mistake if they show a programme flaw. But if they do not, it simply indicates that they have executed a code sequence that is sound for the inputs they were given. A flaw could be discovered during the subsequent test of the same code sequence using various inputs. When all of your team's testers are worn out and all the planned tests have been run, this is known as exhaustive testing, also referred to as comprehensive testing.
+
+     All scenarios or data are tested for testing using this quality assurance testing technique. A more comprehensible definition of exhaustive testing is guaranteeing that there are no unidentified flaws at the conclusion of the testing procedure. With the exception of minor scenarios, it is not possible to test every possible input and precondition combination. We testers frequently lament the fact that we never have enough time for testing. You still wouldn't have enough time to test all the potential input and output combinations even if you had all the time in the world.
+
+
+
+=======================================================================================================================================================================================
+9.9 Explain why software security testing is more difficult than functional testing.
+
+Functional Testing:
+
+This kind of testing is carried out to ensure the system's features perform as expected.
+
+Security Testing:
+
+Testing for quality is a subset of non-functional testing. Under security testing, we look for any weak spots that could leave the system open to harm.
+
+Security testing is more challenging than functional testing for the following reasons:
+
+Described in detail:
+
+Comparatively, security testing is much more in-depth than functional testing. So, it's more challenging than functional testing because of this.
+
+To guarantee that everything in a system operates as intended, functional testing must be performed. Nonetheless, there are system dangers connected to security testing. According to the system or programme specifications. Each round of security testing is designed to uncover a particular category of risk. From time to time, the parts of the system that were overlooked during functional testing must be addressed during the security testing phase.
+
+Necessities:
+
+The focus of functional testing is on the needs of the users, while the focus of security testing is on their expectations of the system under test.
+
+Needs can be more precisely defined than user expectations. Users may desire a certain feature in a system, but their needs and expectations for that feature will vary. This also has an effect on the amount of security provided because it is tied to user expectations.
+
+Functionality:
+
+Manually testing functionality requires inputs and outputs, which can be tested by hand. Manual security testing is challenging because of the many steps involved (risk assessment, vulnerability discovery, prioritisation, solution development, etc.).
+
+How versus What:
+
+The "whats" of a system are the focus of functional testing. What it does, what procedures it carries out, etc. Providing a definition for "whats" is a breeze.
+
+Testing for security focuses on the "how." What effects the system's design decisions will have on its efficiency, compliance, pressure, usability, sustainability, etc. An in-depth investigation of the system was necessary to understand these facets.
+
+Software security testing helps to detect the bugs in a software and it also helps to detect the vulnerabilities present in a software that the attackers may take advantage of. Discovering the vulnerabilities of a system is a very hard task than detecting the bugs in it. Functional testing detects the bugs by understanding the activities of a software. In functional testing it just checks whether the software is functioning according to the expectation. But while it comes to detect the vulnerabilities then there comes various challenges. Vulnerabilities can not often be revealed by the normal functional tests, security testing needs to have expert knowledge on software vulnerabilities and testing approaches (Akber, et al. 2019). Often product development team members lack that knowledge. 
+
+Because of all the above mentioned reasons software security testing is more difficult than functional testing.   
+
+Reference :
+
+Akber, A., Rizvi, S. S. H., Khan, M. W., Uddin, V., Hashmani, M. A., & Ahmad, J. (2019). Dimensions of Robust Security Testing in Global Software Engineering: A Systematic Review. Human Factors in Global Software Engineering, 252-272.
+
+
+Due to the varied objectives, strategies, and methodologies involved, software security testing is more difficult than functional testing. Functional testing looks at how the program behaves and functions to see if it complies with the requirements. Security testing, on the other hand, focuses on locating and addressing security threats and flaws that may be utilized maliciously.
+
+Functional testing may be carried out by developers or testers who are familiar with the specifications and functionality of the product, but security testing calls for a distinct set of abilities and expertise. To find possible flaws in the software system, security testers need to have a thorough understanding of how security risks and assaults operate as well as the ability to think like a hacker.
+Security testing necessitates a different mentality than functional testing, which is concerned with verifying that the product functions as intended. In order to find possible flaws, security testers must operate on the presumption that the program is weak.
+Software is usually tested during functional testing using a set of predetermined inputs and scenarios. In contrast, security testing entails putting the program through a variety of intricate setups and situations in order to find any potential flaws. This may involve testing for input validation, access control, authentication, and authorization.
+
+
+COLLAPSE
+Functional testing is more challenging than testing for software security because
+
+         The development of a bug-severity scale, metrics for coverage, and generalised benchmarking software functional testing are explored. Executing error-handling procedures is made possible by the failure of the network, disc, memory, and digital library. The method of evaluating software security has been greatly simplified by the unified modelling language. It is proposed that some inputs, such as boundary values, extended strings, escape characters, and reserved words, can have unfavourable side effects and need extra testing consideration. Functional testing ensures that specific functions and activities of the code are functioning by testing the product in the manner in which it is intended to be used. Issues with security or dependability are excluded from this.
+
+            Functional testing strategies do not guard against unauthorised access from other parties. Instead, they aim to prevent users from acting inappropriately or experiencing catastrophic failures. Not all users of the product utilise it for its intended purpose and not all users use it with good intentions. While considering the viewpoint of common users, security vulnerabilities may not be found, but they are in functional testing software that processes private data to thwart attacker access into the system. Nonetheless, all information needs to be protected. IoT and embedded technology are two of the biggest growing markets right now. Security challenges cannot be prevented because of their pervasive integration into daily life, key infrastructure, and industrial facilities.
+
+        However, experience has shown that firms frequently lack testing professionals and that software projects' code quality is frequently insufficient. The process of developing software should always include security testing, though.
+
+      Security is a risk management exercise; it is always based on the information and services being protected, the abilities and resources of the adversaries, and the costs of prospective assurance solutions. The identification of possible security issues and their effects can be aided by risk analysis, particularly at the design stage. ¹ Software risks can then help direct software security testing after being recognised and ranked, although functional testing offers no additional security.
+
+
+The testing environment requires a special effort. This is a must in most functional testing and security testing environments. If talk about security testing, additional security configurations and software is installed in the operating system . In addition, all the possible network attacks and malicious traffic must be considered while testing security. Functional testing is more convenient than security testing. Security tests are much more critical than functional testing. While functional testing is more accessible than security testing, following all the applicable testing standards is not mandatory (Thota et al., 2020). If talk about functional testing can take advantage of many existing tools unavailable for security testing. Since most functional testing concerns functionality, testing for security risks or vulnerabilities in the code is not common in functional testing.
+
+Reference
+
+Thota, M. K., Shajin, F. H., & Rajesh, P. (2020). Survey on software defect prediction techniques. International Journal of Applied Science and Engineering, 17(4), 331-344.
+
+==================================================================================================================================================================================
+9.7 What is regression testing and why is it important? Explain why automated testing makes regression testing straightforward.
+
+Regression testing is the process of testing software to make sure that recent changes or updates haven't broken anything that was previously working. It's important because it helps ensure that the software is reliable and works as expected. The purpose of regression testing is to identify and catch any defects or bugs that may have been introduced during new development, modifications or upgrades, and to ensure that the software continues to perform as expected.
+
+Automated testing makes regression testing easier by using special tools to run tests automatically. This saves time and effort compared to manual testing, which is slower and can be prone to mistakes. Automated testing also helps catch any problems quickly, so they can be fixed before they cause bigger issues. By automating the testing process, developers can quickly identify defects and bugs and make changes to the code without having to manually test the system each time. This enables them to focus on improving the quality of the software, without being burdened by repetitive and time-consuming testing tasks. 
+
+
+9.7 What is regression testing and why is it important? Explain why automated testing makes regression testing straightforward.
+
+Ans : Regression testing : Regression testing refers to the process in which previous tests are done again after making any changes in the system. This testing helps to check the impact of the changes on the software (Peng, et al. 2021).  
+
+Regression testing is important for checking the impact of the changes on the existing functions and code of the software. It helps to find out whether the changes or the updates are causing any new defects in the existing functions or not. 
+
+Automated testing makes regression testing straightforward because automated tests help to make the process of the regress testing very fast (Peng, et al. 2021). It takes little time to execute. If any changes in the software are creating adverse effects on the preexisted components or codes then all the tests can be run again to ensure that all the functions are working as expected. 
+
+Reference : 
+
+Peng, Z., Lin, X., Simon, M., & Niu, N. (2021). Unit and regression tests of scientific software: A study on SWMM. Journal of computational science, 53, 101347.  
+
+9.7 What is regression testing and why is it important? Explain why automated testing makes regression testing straightforward. 
+
+Answer: Regression testing can define the practice of software testing which ensures after code change, improvement, and update the application can still be functional. It can be responsible for functionality and stability in existing features. The regression testing can guarantee to add new modifications in code after each system update. 
+
+Regression testing importance: Regression testing is an important testing process in software development.  With the help of these testing practices developers can improve application and product teams will instantly get many responses and feedback. In the development cycle it can detect all the new bugs so that it can resolve the maintenance effort of developing detects (Mattis, et al, 2020, June). In addition it can ensure the new code validating functionality of compatibility of existing features.  
+
+The release cycle is comprehend regression testing a fair amount for not causing bugs in new development. Generally the test case can be automated to be executed continuously and the same test case is running manually. During its automation it can verify testers and changes to conduct exploration into unusual cases of product environment. This is why automated testing makes regression testing straightforward. 
+
+Reference: Mattis, T., Rein, P., Dürsch, F., & Hirschfeld, R. (2020, June). RTPTorrent: An open-source dataset for evaluating regression test prioritization. In Proceedings of the 17th international conference on mining software repositories (pp. 385-396).
+
+
+
+The process of developing and maintaining software must include regression testing since it helps to guarantee that the software continues to perform as expected, even after changes are made. This type of testing is typically carried out after updates, modifications, or enhancements are made to the software, in order to identify and address any issues that may have been introduced during the development process.
+
+Automated regression testing is a highly efficient and effective way to carry out this process, as it allows developers to run the same test cases repeatedly without having to manually execute each one. By automating this process, developers can save time and ensure that all the test cases are executed consistently, which can help to reduce the risk of missing any defects that may have been introduced.
+
+Regression testing tools can help to streamline this process further by providing a range of features and functionalities, such as test case management, test data management, and reporting. These tools can also by automating a number of procedures that wouldn't normally need to be completed manually, it can assist to decrease the time and effort needed to perform out regression testing.
+
+
+Regression testing not only ensures the performance and quality of the existing features of the application but also helps to increase the overall security of the application. For example, application users get a more reliable experience after running the new features. Thus, regression testing creates a positive effect on the overall applications. An application developed based on an incomplete set of requirements might result in an application that cannot predict or predict the application's behavior, or it can cause the application to malfunction (Elsner et al., 2021). Regression testing ensures that software product functions without defects, an essential part of testing. Regression testing verifies that the software product does not suffer any change and functions as expected. This helps verify the code's integrity after any development has been completed. Regression testing also ensures that any change made to the software product has not impacted the existing functionality (Elsner et al., 2021). It is an integral part of testing that must be performed to ensure that the software product works fine and does not suffer any defects.
+
+Reference
+
+Elsner, D., Hauer, F., Pretschner, A., & Reimer, S. (2021, July). Empirically evaluating readily available information for regression test optimization in continuous integration. In Proceedings of the 30th ACM SIGSOFT International Symposium on Software Testing and Analysis (pp. 491-504). 
+
+
+Regression Testing is crucial because even after the software is developed and is being released, it is possible that bugs or glitches can creep in. Even minor bugs can cause significant trouble for the business. This is where regression testing comes into play. It ensures that no bugs are introduced by making changes to the system. This test ensures that new changes are tested before the software is released.. This test ensures that the software being developed is of the highest quality. The test can be a set of simple operations (as in the cases of the test method discussed below) or complex operations. This will depend on the situation. Moreover, many web application teams have built on the Selenium IDE in recent years. Selenium is also being used to test websites and mobile apps. In the past, we have not found it easy to test these new working methods (Chi et al., 2020). Many new things are happening to test our web applications. We created a free Web Automation Cheat Sheet that provides some basic ideas for working with Selenium and testing the latest web applications.
+
+
+Regression testing is an essential step in the process of developing software. It frequently comes up when businesses want to prioritize scalability. 
+
+Although regression testing has many applications, its main purpose is to evaluate software that has undergone recent changes. It aids software engineers in figuring out whether a system can adapt to changes without sacrificing efficiency. As an illustration, general function regression testing examines every aspect of the software to make sure that features and functions have not been impacted by changes to the program or the code. Other regression testing types include:
+
+ regression in bugs
+Conversion analysis.
+build validation
+To make sure that code changes do not adversely affect the functionality of the current application, automated regression testing is used. Prior to their release, it makes sure the products are fully functional with new features, bug repairs, and enhancements.
+
+
+==============================================================================================================================================================================
+9.5 Automated unit testing
+
+9.5 Explain why it is easier to develop automated unit tests than automated feature test.
+
+The term "Automated unit testing" refers to the process of verifying code modules independently. The primary goal of creating an automated tests is to verify that each constituent part is performing as expected.
+
+The smallest testable software component has a single, well-defined output and a minimal number of inputs.
+
+If everything is running well, then the whole software or product is likely to be fine as well. Programmers are the ones who typically do this. While feature testing can be done manually, automation is typically used due to its speed and accuracy.
+
+The primary step in automated unit testing is for the programmer to write the testable code for the application. This will make testing more precise by allowing each line of programming or function to be evaluated independently, but feature analysis is challenging because it requires determining whether or not a user would actually find the addition of a new feature to be beneficial.
+
+Because we only need to test the program the developer wrote, unit testing is simple and requires no user participation.
+
+
+Automated unit testing is the method of testing the software. In this testing method all the small components of a software are carefully checked whether they are functioning properly or not. While it comes to automation, this testing should be provided as the first priority. Automated feature testing refers to the testing process of the software which checks whether the product fulfills all the requirements (Battina, 2019). In this testing it is ensured that the product functions exactly the way it has been designed or not. It is easier to develop automated unit tests than automated feature tests because automated features tests can not be executed by using only a single assertion. It requires multiple assertions for analyzing the features. Some automation feature testing can be done using a framework of unit testing. But it sometimes also requires the use of some specialized framework of feature testing. 
+
+Reference : 
+
+Battina, D. S. (2019). Artificial intelligence in software test automation: a systematic literature review. International Journal of Emerging Technologies and Innovative Research (www. jetir. org| UGC and issn Approved), ISSN, 2349-5162.
+
+
+ Explain why it is easier to develop automated unit tests than automated feature tests.
+
+Answer: Unit testing can emphasize the program development of users and help to detect modular behaviors to confined specific behaviors of validation. Unlike the feature test automated unit tests are easily developed and  it is highly specific to interaction diversity, input variation, user perspective, and usability  (Lukasczyk, 2022, May).  Moreover automated features tests can capture a designed small test number and this test is quite expensive. While the automated unit testing can playback the predefined activity and prer-recording. So compared to automated features tests it is easy to develop automated unit tests.  
+
+Reference: Lukasczyk, S., & Fraser, G. (2022, May). Pynguin: Automated unit test generation for python. In Proceedings of the ACM/IEEE 44th International Conference on Software Engineering: Companion Proceedings (pp. 168-172).
+
+
+
+Manually isolating and testing units can be a time-consuming and error-prone process, especially as software becomes more complex. This is why unit tests are usually automated using scripts, testing environments, and custom code.
+
+Automating unit tests has several benefits. Firstly, it is faster and more efficient than manual testing, as the tests can be run quickly and repeatedly without the risk of human error. This enables developers to test their code more frequently and catch bugs earlier in the development process, reducing the cost of fixing defects later on.
+
+Secondly, automated testing allows developers to test their code in a consistent and reproducible way. This is particularly important when multiple developers are working on the same codebase, as it ensures that everyone is testing the code in the same way and that the tests are always up to date with the latest changes.
+
+Finally, automated testing can be integrated into the development process, allowing developers to run tests automatically every time they make changes to the code. This enables them to catch defects early and fix them quickly, reducing the risk of introducing new bugs into the codebase.
+
+An automated testing tool can replay previously recorded and predefined actions, compare the outcomes to the expected behavior, and inform a test engineer whether these manual tests were successful or unsuccessful. Once automated tests are built, they are simple to repeat and can be expanded to carry out activities that manual testing is unable to. As a result, smart managers have discovered that automated software testing is crucial to the success of development initiatives.
+
+For large software development firms, automated software testing has long been regarded as essential, but it is frequently believed to be too expensive or too challenging for smaller businesses to deploy.
+
+Testing Automation Saves Time and Money
+
+To assure quality, software tests must be run repeatedly throughout development cycles. Software tests should be run again after each source code change. Every software release may be tested on all supported hardware setups and operating systems.
+
+ 
+
+Benefits of automated unit testing:
+
+Significantly Expands the Test Coverage
+
+Testing Increases Accuracy
+
+Automated Testing Can Do What Manual Testing Can't 
+
+Developers and Testers Can Benefit from Automated Testing
+
+ 
+
+automated feature test:
+
+Software testing examines an application's usability to detect any problems. It basically determines whether or not the generated program complies with the requirements and finds any software flaws.
+
+Software testing can be broadly divided into two types:
+
+Functional Evaluation
+
+Testing that isn't functional
+
+
+
+===================================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
